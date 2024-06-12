@@ -5,10 +5,7 @@ python partition_function.py -m pythia-70M
 
 import argparse
 import json
-import pathlib
 import sys
-import time
-
 
 import torch
 from transformers import  AutoModel, AutoModelForCausalLM
@@ -184,7 +181,7 @@ def parse_arguments():
         "--model", 
         type=str, 
         required=True, 
-        help="the model to evaluate"
+        help=f"the model to evaluate. valid choices are {list(MODEL_CONFIGS.keys())}"
     )
     parser.add_argument(
         "-c", 
@@ -356,7 +353,7 @@ def main():
 
             results[revision] = isotropy_results
 
-    print(json.dumps(results, indent=2)) #redirect terminal output to save
+    print(json.dumps(results, indent=2)) #redirect terminal output to saveany
 
         
 if __name__ == "__main__":
