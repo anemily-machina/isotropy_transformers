@@ -2,6 +2,8 @@
 
 ## partition_function.py
 
+Reproduces the paritition function results from the paper. 
+
 ```
 usage: partition_function.py [-h] -m MODEL [-c CACHE_DIR] [-t | --training | --no-training]
 
@@ -67,4 +69,32 @@ MODEL_CONFIGS = {
   ...
 ```
 
+## cosine_improvement.py
 
+A demonstration of how our method improves the time it takes to computer the average cosine similarity between distinct pairs in a set of vectors.
+
+```
+usage: cosine_improvement.py [-h] [-ne NUMBER_EMB] [-es EMB_SIZE] [-i | --isotropic | --no-isotropic] [-ss SAMPLE_SIZE]
+                              [-b | --batched | --no-batched] [-bs BATCH_SIZE] [-psm PARTIAL_SUM_MAX] [-s SEED]
+
+options:
+  -h, --help            show this help message and exit
+  -ne NUMBER_EMB, --number_emb NUMBER_EMB
+                        The number of random embeddings to generate
+  -es EMB_SIZE, --emb_size EMB_SIZE
+                        The size of the embeddings
+  -i, --isotropic, --no-isotropic
+                        Isotropic: emb values in N(0,1), Not Isotropic: emb values in uniform [0,1)
+  -ss SAMPLE_SIZE, --sample_size SAMPLE_SIZE
+                        Number of sample to estime true cosine similarity (will still compute full cosine)
+  -b, --batched, --no-batched
+                        Use batched methods (may OOM if not using batched methods)
+  -bs BATCH_SIZE, --batch_size BATCH_SIZE
+                        Batch size if using batched methods, default:128
+  -psm PARTIAL_SUM_MAX, --partial_sum_max PARTIAL_SUM_MAX
+                        Number of values in each partial sum (to prevent floating point errors), if using batched methods. default: 1280
+```
+
+### Examples
+
+Isotropic embeddings
