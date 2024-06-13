@@ -31,4 +31,40 @@ Calculating Isotropy: 100%|█████████████████�
 }
 ```
 
-Note you must have enough memory to load the model.
+Note you must have enough memory to load the model. 
+
+If you want to add another model create a function that will get its embedding. E.g., for Pythia models
+
+```
+def gptneox_get_embeddings(
+        model_params
+        ):
+    """_summary_ gets the input and output embeddings for the given pythia model
+
+    Args:
+        model_params (_type_): _description_ model paramters 
+
+    Returns:
+        _type_: _description_ emb_in, emb_out
+    """
+
+    model = AutoModelForCausalLM.from_pretrained(**model_params)
+
+    emb_in = model.gpt_neox.embed_in.weight
+    emb_out = model.embed_out.weight
+
+    return emb_in, emb_out
+```
+
+and then add your model to the dict of valid model choices. E.g for pythia models
+
+```
+MODEL_CONFIGS = {
+    "pythia-70m":{
+        "model_addr":"EleutherAI/pythia-70M",
+        "get_emb_fn":gptneox_get_embeddings
+    },
+  ...
+```
+
+
