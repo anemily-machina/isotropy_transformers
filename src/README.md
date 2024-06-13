@@ -17,3 +17,19 @@ options:
   -t, --training, --no-training
                         Use the 21 training checkpoints from the paper (only works with Pythia models)
 ```
+
+Example:
+```
+python partition_function.py -m pythia-70m
+Calculating Isotropy: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:04<00:00,  4.86s/it]
+{
+  "": {
+    "IW_in": 0.9584758281707764,
+    "IW_out": 0.08308906108140945,
+    "IW_in_centered": 0.9968440532684326,
+    "IW_out_centered": 0.9724733829498291
+  }
+}
+```
+
+Note you must have enough memory to load the model.
