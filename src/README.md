@@ -94,7 +94,8 @@ options:
   -bs BATCH_SIZE, --batch_size BATCH_SIZE
                         Batch size if using batched methods, default:128
   -psm PARTIAL_SUM_MAX, --partial_sum_max PARTIAL_SUM_MAX
-                        Number of values in each partial sum (to prevent floating point errors), if using batched methods. default: 1280
+                        Number of values in each partial sum (to prevent floating point errors),
+                          if using batched methods. default: 1280
 ```
 
 ### Examples
