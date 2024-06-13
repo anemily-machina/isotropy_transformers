@@ -18,15 +18,14 @@ anemily.machina@uwo.ca
 
 ## References
 
-Please consider citing us if you use any graphs or code from this repository.
+Please consider citing us if you use any graphs or code from this repository. Citation will be updated when ACL anthology is updated.
 
 ```
-@inproceedings{
-machina2024anisotropy,
-title={Anisotropy is Not Inherent to Transformers},
-author={Anemily Machina and Robert Mercer},
-booktitle={2024 Annual Conference of the North American Chapter of the Association for Computational Linguistics},
-year={2024},
-url={https://openreview.net/forum?id=xulEgHJiLs}
+@inproceedings{machina2024anisotropy,
+  title={Anisotropy is Not Inherent to Transformers},
+  author={Anemily Machina and Robert Mercer},
+  booktitle={2024 Annual Conference of the North American Chapter of the Association for Computational Linguistics},
+  year={2024},
+  url={https://openreview.net/forum?id=xulEgHJiLs}
 }
 ```
