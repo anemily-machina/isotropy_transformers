@@ -71,7 +71,7 @@ MODEL_CONFIGS = {
 
 ## cosine_improvement.py
 
-A demonstration of how our method improves the time it takes to computer the average cosine similarity between distinct pairs in a set of vectors.
+A demonstration of how our method improves the time it takes to compute the average cosine similarity between distinct pairs of vectors. If you disabile batching make sure you have enough memory to compute all the cosine similarities directly. AA^T
 
 ```
 usage: cosine_improvement.py [-h] [-ne NUMBER_EMB] [-es EMB_SIZE] [-i | --isotropic | --no-isotropic] [-ss SAMPLE_SIZE]
@@ -97,4 +97,116 @@ options:
 
 ### Examples
 
-Isotropic embeddings
+Non-isotropic embeddings. Note that the sample of 10,000 embeddings estimate (0.005) is far from the true average cosine similiarity (0.75).
+
+```
+python cosine_improvement.py
+
+Creating Embeddings...
+
+Normalizing Embeddings..
+
+--------------------------------------------------------------------------------
+
+Quick test with <= 10 emeddings as full test will take a while
+
+Computing Fast Cosine..
+
+Fast Cosine took 0.00 seconds
+Fast Cosine value: -0.000008
+
+Computing Slow Cosine..
+
+Slow cosine took 0.00 seconds
+Slow Cosine value: -0.000008
+
+--------------------------------------------------------------------------------
+
+Computing cosine estimate with Random Sample of 10000 embeddings (to see quality of estimate)
+
+Computing Fast Cosine..
+
+Fast Cosine took 0.00 seconds
+Fast Cosine value: 0.004572
+
+Computing Slow Cosine..
+
+Slow cosine took 0.19 seconds
+Slow Cosine value: 0.004572
+
+--------------------------------------------------------------------------------
+
+
+Running full test on 128000 embedings
+
+Computing Fast Cosine..
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 2851.97it/s]
+
+Fast Cosine batched took 0.35 seconds
+Fast Cosine value: 0.750110
+
+Computing Slow Cosine..
+NOTE: Batches will get slower as they progress as we are looping j<i for all i
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [03:40<00:00,  4.54it/s]
+
+Slow Cosine batched took 220.49 seconds
+Slow Cosine value: 0.750052
+```
+
+Isotropic embeddings. Here the estimate is close to the true value.
+
+```
+python cosine_improvement.py -i
+
+Creating Embeddings...
+
+Normalizing Embeddings..
+
+--------------------------------------------------------------------------------
+
+Quick test with <= 10 emeddings as full test will take a while
+
+Computing Fast Cosine..
+
+Fast Cosine took 0.00 seconds
+Fast Cosine value: -0.000008
+
+Computing Slow Cosine..
+
+Slow cosine took 0.00 seconds
+Slow Cosine value: -0.000008
+
+--------------------------------------------------------------------------------
+
+Computing cosine estimate with Random Sample of 10000 embeddings (to see quality of estimate)
+
+Computing Fast Cosine..
+
+Fast Cosine took 0.00 seconds
+Fast Cosine value: -0.000007
+
+Computing Slow Cosine..
+
+Slow cosine took 0.18 seconds
+Slow Cosine value: -0.000007
+
+--------------------------------------------------------------------------------
+
+
+Running full test on 128000 embedings
+
+Computing Fast Cosine..
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:00<00:00, 2856.27it/s]
+
+Fast Cosine batched took 0.35 seconds
+Fast Cosine value: 0.000001
+
+Computing Slow Cosine..
+NOTE: Batches will get slower as they progress as we are looping j<i for all i
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1000/1000 [03:44<00:00,  4.46it/s]
+
+Slow Cosine batched took 224.26 seconds
+Slow Cosine value: 0.000001
+```
+
+TODO: add a positive bias factor option to simulate narrow cones.
