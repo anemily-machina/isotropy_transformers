@@ -3,7 +3,6 @@
 ## partition_function.py
 
 ```
-python partition_function.py -h
 usage: partition_function.py [-h] -m MODEL [-c CACHE_DIR] [-t | --training | --no-training]
 
 options:
