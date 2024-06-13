@@ -209,7 +209,7 @@ def parse_arguments():
         "--sample_size", 
         type=int, 
         default=10000,
-        help=f"Number of sample to estimate true cosine similarity (will still compute full cosine)"
+        help=f"Number of samples to estimate true cosine similarity (will still compute full cosine)"
     )
     
     parser.add_argument(
