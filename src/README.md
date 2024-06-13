@@ -88,7 +88,7 @@ options:
   -i, --isotropic, --no-isotropic
                         Isotropic: emb values in N(0,1), Not Isotropic: emb values in uniform [0,1)
   -ss SAMPLE_SIZE, --sample_size SAMPLE_SIZE
-                        Number of sample to estime true cosine similarity (will still compute full cosine)
+                        Number of sample to estimate true cosine similarity (will still compute full cosine)
   -b, --batched, --no-batched
                         Use batched methods (may OOM if not using batched methods)
   -bs BATCH_SIZE, --batch_size BATCH_SIZE
