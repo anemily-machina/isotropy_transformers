@@ -71,7 +71,7 @@ MODEL_CONFIGS = {
 
 ## cosine_improvement.py
 
-A demonstration of how our method improves the time it takes to compute the average cosine similarity between distinct pairs of vectors. If you disabile batching make sure you have enough memory to compute all the cosine similarities directly. AA<sup>T</sup>
+A demonstration of how our method improves the time it takes to compute the average cosine similarity between distinct pairs of vectors. If you disabile batching make sure you have enough memory to compute all the cosine similarities directly: e.g AA<sup>T</sup> which has size |V|\*|V| = number_embeddings\*number_embeddings
 
 ```
 usage: cosine_improvement.py [-h] [-ne NUMBER_EMB] [-es EMB_SIZE] [-i | --isotropic | --no-isotropic] [-ss SAMPLE_SIZE]
