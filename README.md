@@ -1,6 +1,6 @@
 # Anisotropy is Not Inherent to Transformers
 
-A repository to go along with the NA ACL 2024 paper (https://openreview.net/forum?id=xulEgHJiLs&noteId=xulEgHJiLs)
+A repository to go along with the NA ACL 2024 paper ([Link to paper](https://aclanthology.org/2024.naacl-long.274/))
 
 ## graphs/svd reducation
 
@@ -21,11 +21,19 @@ anemily.machina@uwo.ca
 Please consider citing us if you use any graphs or code from this repository. Citation will be updated when ACL anthology is updated.
 
 ```
-@inproceedings{machina2024anisotropy,
-  title={Anisotropy is Not Inherent to Transformers},
-  author={Anemily Machina and Robert Mercer},
-  booktitle={2024 Annual Conference of the North American Chapter of the Association for Computational Linguistics},
-  year={2024},
-  url={https://openreview.net/forum?id=xulEgHJiLs}
+@inproceedings{machina-mercer-2024-anisotropy,
+    title = "Anisotropy is Not Inherent to Transformers",
+    author = "Machina, Anemily  and
+      Mercer, Robert",
+    editor = "Duh, Kevin  and
+      Gomez, Helena  and
+      Bethard, Steven",
+    booktitle = "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+    month = jun,
+    year = "2024",
+    address = "Mexico City, Mexico",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.naacl-long.274",
+    pages = "4892--4907",
 }
 ```
