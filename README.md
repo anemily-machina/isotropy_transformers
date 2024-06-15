@@ -18,7 +18,7 @@ anemily.machina@uwo.ca
 
 ## References
 
-Please consider citing us if you use any graphs or code from this repository. Citation will be updated when ACL anthology is updated.
+Please consider citing us if you use any graphs or code from this repository.
 
 ```
 @inproceedings{machina-mercer-2024-anisotropy,
